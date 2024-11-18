@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PWA Workshop</title>
+    <script src="fetcher.js"></script>
+</head>
+
+<body>
+<h2>Intercepting fetch | フェッチのインターセプト</h2>
+<h3>Network is slowed down for caching to be more apparent<br/>
+    速度を判断しやすくするため、ネットの速度を落としています</h3>
+<p>
+    Open dev tools (<code>ctrl-shift-c</code> or <code>F12</code>) and switch to "Network" tab.<br/>
+    Write any url below and try to fetch that resource.<br/>
+    When fetching resource for the first time you can see outgoing request at network panel.<br/>
+    If fetch request twice then second time you'll get cached response immediately.<br/>
+    For example, <code>https://jsonplaceholder.typicode.com/users</code>
+</p>
+<p>
+    開発ツールを開き（<code>ctrl-shift-c</code>または<code>F12</code>）、「ネットワーク」タブに切り替えてください。<br/>
+    初めてリソースをフェッチしたとき、ネットワーク・パネルに送信リクエストが表示されます。<br/>
+    リクエストを2回フェッチすると、2回目はすぐにキャッシュされたレスポンスが返ってきます。<br/>
+    例えば、<code>https://jsonplaceholder.typicode.com/users</code>
+</p>
+<div>
+    <input placeholder="www.example.com" id="fetch-input"/>
+    <button id="fetch-button" onclick="handleFetch()">fetch</button>
+</div>
+<script>
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js")
+</script>
+</body>
+</html>
